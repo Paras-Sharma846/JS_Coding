@@ -116,141 +116,141 @@ function findIndexForTarget(arr, target) {
 }
 
 // let arr = [0,2,3,4];
-// let target = 9;
+let target = 9;
 // let index = findIndexForTarget(arr, target);
 // console.log(index);
 
 // reverse a array
-// function reverseArray(arr) {
-//   let reverse = [];
-//   for (let i = arr.length - 1; i >= 0; i--) {
-//     reverse.push(arr[i]);
-//   }
-//   return reverse;
-// }
+function reverseArray(arr) {
+  let reverse = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    reverse.push(arr[i]);
+  }
+  return reverse;
+}
 
 // let arr = [1, 2, 3, 4, 5];
-// // console.log(reverseArray(arr));
+// console.log(reverseArray(arr));
 
-// // find max element in array
-// function findMax(arr) {
-//   let max = arr[0];
-//   for (let i = 1; i < arr.length; i++) {
-//     if (arr[i] > max) {
-//       max = arr[i];
-//     }
-//   }
-//   return max;
-// }
+// find max element in array
+function findMax(arr) {
+  let max = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
 
-// let a = [5, 1, 7, 11, 0, 12];
-// // console.log(findMax(a));
+let a = [5, 1, 7, 11, 0, 12];
+// console.log(findMax(a));
 
-// // find pairs of numbers
-// function findPairs(arr, target) {
-//   let pairs = [];
-//   for (let i = 0; i < arr.length; i++) {
-//     for (let j = i + 1; j < arr.length; j++) {
-//       if (arr[i] + arr[j] === target) {
-//         console.log("===============");
-//         pairs.push(arr[i], arr[j]);
-//       }
-//     }
-//   }
-//   return pairs;
-// }
+// find pairs of numbers
+function findPairs(arr, target) {
+  let pairs = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] === target) {
+        console.log("===============");
+        pairs.push(arr[i], arr[j]);
+      }
+    }
+  }
+  return pairs;
+}
 
-// // let b = [1,2,3,4,5]
-// // let targets = 12
+// let b = [1,2,3,4,5]
+// let targets = 12
 
-// // console.log('find pairs',findPairs(b, targets));
+// console.log('find pairs',findPairs(b, targets));
 
-// // merge two array
-// function mergeArrays(arr1, arr2) {
-//   let merged = [];
-//   for (let i = 0; i < arr1.length; i++) {
-//     merged.push(arr1[i]);
-//   }
-//   for (let i = 0; i < arr2.length; i++) {
-//     let exists = false;
-//     for (let j = 0; j < merged.length; j++) {
-//       if (arr2[i] === merged[j]) {
-//         exists = true;
-//         break;
-//       }
-//     }
-//     if (!exists) {
-//       merged.push(arr2[i]);
-//     }
-//   }
-//   return merged;
-// }
+// merge two array
+function mergeArrays(arr1, arr2) {
+  let merged = [];
+  for (let i = 0; i < arr1.length; i++) {
+    merged.push(arr1[i]);
+  }
+  for (let i = 0; i < arr2.length; i++) {
+    let exists = false;
+    for (let j = 0; j < merged.length; j++) {
+      if (arr2[i] === merged[j]) {
+        exists = true;
+        break;
+      }
+    }
+    if (!exists) {
+      merged.push(arr2[i]);
+    }
+  }
+  return merged;
+}
 
-// let ar1 = [1, 2, 3, 4, 51];
-// let ar2 = [2, 7, 11, 9, 1];
-// // console.log(mergeArrays(ar1, ar2));
+let ar1 = [1, 2, 3, 4, 51];
+let ar2 = [2, 7, 11, 9, 1];
+// console.log(mergeArrays(ar1, ar2));
 
-// // linear search
-// function linearSearch(array, target) {
-//   let len = array.length;
-//   for (let i = 0; i < len; i++) {
-//     if (array[i] === target) {
-//       console.log("=========found");
-//       return i;
-//     }
-//   }
-//   return "not found";
-// }
+// linear search
+function linearSearch(array, target) {
+  let len = array.length;
+  for (let i = 0; i < len; i++) {
+    if (array[i] === target) {
+      console.log("=========found");
+      return i;
+    }
+  }
+  return "not found";
+}
 
 // console.log(linearSearch(x, t))
 
 // binary search
-// function binarySearch(array, target) {
-//   let start = 0;
-//   let end = array.length - 1;
-//   console.log("==========start==========", start);
+function binarySearch(array, target) {
+  let start = 0;
+  let end = array.length - 1;
+  console.log("==========start==========", start);
 
-//   while (start <= end) {
-//     let mid = Math.floor((start + end) / 2);
-//     console.log("=========mid=======", mid);
+  while (start <= end) {
+    let mid = Math.floor((start + end) / 2);
+    console.log("=========mid=======", mid);
 
-//     if (array[mid] === target) {
-//       return mid;
-//     } else if (array[mid] < target) {
-//       console.log("target is greater than mid");
-//       start = mid + 1;
-//     } else {
-//       console.log("target is smaller than mid");
-//       end = mid - 1;
-//     }
-//   }
+    if (array[mid] === target) {
+      return mid;
+    } else if (array[mid] < target) {
+      console.log("target is greater than mid");
+      start = mid + 1;
+    } else {
+      console.log("target is smaller than mid");
+      end = mid - 1;
+    }
+  }
 
-//   return -1;
-// }
+  return -1;
+}
 
-// let x = [1, 3, 5, 7];
-// let t = 1;
-// // console.log(binarySearch(x, t));
+let x = [1, 3, 5, 7];
+let t = 1;
+// console.log(binarySearch(x, t));
 
-// // bubble sort 
+// bubble sort 
 
-// function bubbleSort(a) {
-// for(let i = 0; i < a.length-1; i++) {
-//   for(let j = 0; j < a.length-1-i; j++){
-//     // console.log(a[j],'=========j====')
-//     if(a[j] > a[j+1]){
-//       console.log('===j=====',a[j])
-//   let temp = a[j];
-//   a[j] = a[j+1];
-//   a[j+1] = temp;
-//     }
-//   }
-// }
-// return a;
+function bubbleSort(a) {
+for(let i = 0; i < a.length-1; i++) {
+  for(let j = 0; j < a.length-1-i; j++){
+    // console.log(a[j],'=========j====')
+    if(a[j] > a[j+1]){
+      console.log('===j=====',a[j])
+  let temp = a[j];
+  a[j] = a[j+1];
+  a[j+1] = temp;
+    }
+  }
+}
+return a;
 
-// }
+}
 
-// let y = [10,4,1,7,8];
+let y = [10,4,1,7,8];
 // console.log(bubbleSort(y))
 
 
@@ -268,15 +268,15 @@ function isDuplicate(arr) {
           result.push(arr[i]);
       }
 
-      // for (let k = 0; k < result.length - 1; k++) {
-      //     for (let l = 0; l < result.length - k - 1; l++) {
-      //         if (result[l] > result[l + 1]) {
-      //             let temp = result[l];
-      //             result[l] = result[l + 1];
-      //             result[l + 1] = temp;
-      //         }
-      //     }
-      // }
+      for (let k = 0; k < result.length - 1; k++) {
+          for (let l = 0; l < result.length - k - 1; l++) {
+              if (result[l] > result[l + 1]) {
+                  let temp = result[l];
+                  result[l] = result[l + 1];
+                  result[l + 1] = temp;
+              }
+          }
+      }
   }
 
   return result;
@@ -285,6 +285,8 @@ function isDuplicate(arr) {
 let arr = [1, 6, 2, 3, 6,22, 2, 9, 7,11];
 // console.log(isDuplicate(arr));
 
+
+//  find the two-digit elements, remove duplicates, and sort the resulting array
 function proceesArray(arr){
   let result  = [];
   for(let i =0 ;i<arr.length;i++){
@@ -307,4 +309,20 @@ function proceesArray(arr){
 }
 
 let arr5 = [11, 2, 1, 25, 27, 11, 1];
-console.log(proceesArray(arr5));
+// console.log(proceesArray(arr5));
+
+//  function to find the intersection (common elements) of two arrays.
+
+function findIntersection(arr1, arr2) {
+  let intersection = [];
+  for(let i = 0; i < arr1.length; i++) {
+    if (arr2.includes(arr1[i]) && !intersection.includes(arr1[i])) {
+      intersection.push(arr1[i]);
+  }
+  }
+  return intersection;
+}
+
+let arr12 = [1, 2, 3, 4];
+let arr13 = [3, 4, 5, 6];
+console.log(findIntersection(arr12, arr13));
