@@ -316,6 +316,7 @@ let arr5 = [11, 2, 1, 25, 27, 11, 1];
 function findIntersection(arr1, arr2) {
   let intersection = [];
   for(let i = 0; i < arr1.length; i++) {
+    console.log('arr2.includes(arr1[i])',arr2.includes(arr1[i]),i);
     if (arr2.includes(arr1[i]) && !intersection.includes(arr1[i])) {
       intersection.push(arr1[i]);
   }
@@ -323,6 +324,46 @@ function findIntersection(arr1, arr2) {
   return intersection;
 }
 
-let arr12 = [1, 2, 3, 4];
+let arr12 = [1, 2, 5 , 4];
 let arr13 = [3, 4, 5, 6];
-console.log(findIntersection(arr12, arr13));
+// console.log(findIntersection(arr12, arr13));
+
+// count the elements occurences in the array
+function countOccurences(arr) {
+  let result ={};
+  for(let i=0;i<arr.length;i++) {
+    console.log(result[arr[i]],'---------')
+    if(result[arr[i]]){
+      result[arr[i]]++;
+    }
+    else{
+      result[arr[i]] = 1;
+    }
+  }
+  return result;
+}
+
+let arr14 = [12,3,4,11,2,3,12,4,0,1];
+// console.log(countOccurences(arr14));
+
+// second largest elements in array
+
+function secondLargest(arr){
+  let firstMax = -Infinity;
+  let secondMax = -Infinity;
+  console.log(arr.length);
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i]>firstMax){
+      secondMax = firstMax;
+      firstMax = arr[i];
+    }
+    else if(arr[i]>secondMax && arr[i]<firstMax){
+      secondMax = arr[i];
+    }
+  }
+  return secondMax;
+}
+
+let arr15 = [1, 2, 5, 4, 7, 8, 10];
+
+console.log(secondLargest(arr15));
